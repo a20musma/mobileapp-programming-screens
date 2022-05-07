@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -28,18 +29,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Button  oppen = findViewById(R.id.open);
-        oppen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("TAG", "Start aktivitet");
 
-                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
-
-                startActivity(intent);
-
-            }
-        });
 
 
     }
