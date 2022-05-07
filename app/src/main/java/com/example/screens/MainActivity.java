@@ -17,5 +17,26 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        String name = "Mustafe";
+
+        Intent intent =getIntent();
+        if (intent != null){
+           String temp = intent.getStringExtra("name");
+           if (temp != null) {
+               name = temp;
             }
+        }
+
+        TextView text = findViewById(R.id.text);
+        text.setText(name);
+
+        Button close = findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Main", "Start Aktivity");
+                finish();
+            }
+        });
+    }
 }

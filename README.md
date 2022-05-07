@@ -1,7 +1,7 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+**fgfgfg **
 
 _Du kan ta bort all text som finns sedan tidigare_.
 
@@ -16,24 +16,54 @@ _Du kan ta bort all text som finns sedan tidigare_.
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+
+    setContentView(R.layout.activity_main);
+    String name = "Mustafe";
+
+        Intent intent =getIntent();
+        if (intent != null){
+           String temp = intent.getStringExtra("name");
+           if (temp != null) {
+               name = temp;
+            }
+        }
+
+        TextView text = findViewById(R.id.text);
+        text.setText(name);
+
+        Button close = findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Main", "Start Aktivity");
+                finish();
+            }
+        });
+        
+        
+setContentView(R.layout.activity_second);
+final EditText password = findViewById(R.id.password);
+
+        Button  oppen = findViewById(R.id.open);
+        oppen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String passwordText = password.getText().toString();
+                Log.d("TAG", "Start aktivitet med passwoed" + password );
+
+                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+                intent.putExtra("name", passwordText);
+                startActivity(intent);
+
+            }
+        });
+        
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](main.png)
+![](activiti.png)
 
 Läs gärna:
 
