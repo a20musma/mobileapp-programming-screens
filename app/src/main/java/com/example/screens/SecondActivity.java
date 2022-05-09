@@ -29,7 +29,21 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        final EditText password = findViewById(R.id.password);
 
+        Button  oppen = findViewById(R.id.open);
+        oppen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String passwordText = password.getText().toString();
+                Log.d("TAG", "Start aktivitet med passwoed" + password );
+
+                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+                intent.putExtra("name", passwordText);
+                startActivity(intent);
+
+            }
+        });
 
 
     }

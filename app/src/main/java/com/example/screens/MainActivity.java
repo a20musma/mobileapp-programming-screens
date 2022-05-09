@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        String name = "Mustafe";
+        String name = "";
 
         Intent intent =getIntent();
         if (intent != null){

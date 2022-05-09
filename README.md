@@ -1,7 +1,58 @@
 
 # Rapport
 
-**fgfgfg **
+**Först Jag aderat en Activity som kallas Activity_second här jag gjorde LinearLayout, TextView och Button
+detta har hjälpt designa skriva data och sickar i Activity_main. 
+``` 
+final EditText password = findViewById(R.id.password);
+```
+Den har hälpt mig att sicka min variable med texteditor med id Password.
+
+```
+  Button  oppen = findViewById(R.id.open);
+        oppen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String passwordText = password.getText().toString();
+                Log.d("TAG", "Start aktivitet med passwoed" + password );
+
+                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+                intent.putExtra("name", passwordText);
+                startActivity(intent);
+
+            }
+        });
+```
+när jag Tryck Button med hjälp av denna kod jag tog mina variable dem till MainActivit.
+
+```
+ Intent intent =getIntent();
+        if (intent != null){
+           String temp = intent.getStringExtra("name");
+           if (temp != null) {
+               name = temp;
+            }
+        }
+```
+Det här är koden som kopplar mellen SecondAdtivity och MainActivity.
+```
+TextView text = findViewById(R.id.text);
+        text.setText(name);
+```
+Den koden är  här du kommer att se min min variable som sickade av data i SecondActivity. 
+```
+  Button close = findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Main", "Start Aktivity");
+                finish();
+            }
+        });
+```
+Den här element koden görte att gå tillbaka activity_main sidan, när man tryckar button knapp.
+
+**
 
 _Du kan ta bort all text som finns sedan tidigare_.
 
